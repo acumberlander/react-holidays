@@ -90,14 +90,14 @@ class App extends React.Component {
             <div className="container">
               <div className="row">
                 <Switch>
+                  <PrivateRoute path='/friends/:id/edit' component={EditFriend} authed={this.state.authed} />
                   <PrivateRoute path='/friends/new' component={NewFriend} authed={this.state.authed} />
                   <PrivateRoute path='/friends' component={Friends} authed={this.state.authed} />
-                  <PrivateRoute path='/friends/:id/edit' component={EditFriend} authed={this.state.authed} />
                   <PrivateRoute path='/holidays/new' component={NewHoliday} authed={this.state.authed} />
-                  <PrivateRoute path='/holidays' component={Holidays} authed={this.state.authed} />
-                  <PrivateRoute path="/holidays/:id" component={HolidayDetail} authed={this.state.authed} />
-                  <PrivateRoute path='/holidays/:id/edit' component={EditHoliday} authed={this.state.authed} />
                   <PrivateRoute path='/holidays/:id/friends' component={HolidayFriends} authed={this.state.authed} />
+                  <PrivateRoute path='/holidays/:id/edit' component={EditHoliday} authed={this.state.authed} />
+                  <PrivateRoute path="/holidays/:id" component={HolidayDetail} authed={this.state.authed} />
+                  <PrivateRoute path='/holidays' component={Holidays} authed={this.state.authed} />
                   <PublicRoute path='/auth' component={Auth} authed={this.state.authed}/>
                 </Switch>
               </div>
