@@ -12,7 +12,7 @@ import {
 import connection from '../Helpers/Data/connection';
 
 import Auth from '../components/Pages/Auth/Auth';
-// import Home from '../components/Pages/Home/Home';
+import Home from '../components/Pages/Home/Home';
 import Friends from '../components/Pages/Friends/Friends';
 import NewFriend from '../components/Pages/NewFriend/NewFriend';
 import EditFriend from '../components/Pages/EditFriend/EditFriend';
@@ -90,6 +90,7 @@ class App extends React.Component {
             <div className="container">
               <div className="row">
                 <Switch>
+                  <PrivateRoute path='/home' component={Home} authed={this.state.authed} />
                   <PrivateRoute path='/friends/:id/edit' component={EditFriend} authed={this.state.authed} />
                   <PrivateRoute path='/friends/new' component={NewFriend} authed={this.state.authed} />
                   <PrivateRoute path='/friends' component={Friends} authed={this.state.authed} />
